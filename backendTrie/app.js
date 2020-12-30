@@ -99,6 +99,15 @@ app.get('/delete-contact/:delete', (req, res) => {
   res.json(bool)
 })
 
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("../trie-project/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../trie-project", "build", "index.html"));
+  });
+}
+
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${port}`)

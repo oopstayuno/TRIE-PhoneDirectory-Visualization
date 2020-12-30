@@ -101,7 +101,7 @@ const insertNewContact = ()=>{
   }else{
     let newUrl = `${url}add-user/name/${newEntry.name}/contact/${newEntry.phoneNumber}`;
 
-    console.log("This is the new url: ", newUrl);
+//     console.log("This is the new url: ", newUrl);
     axios.get(newUrl);
     window.location.reload();
   }
@@ -129,17 +129,17 @@ const getPhoneNumber = async ()  => {
     // get phone number
     let newUrl = `${url}get-contact/${getPhoneName}`;
 
-    console.log("This is the new url: ", newUrl);
+//     console.log("This is the new url: ", newUrl);
     let contactNumber = await axios.get(newUrl);
 
-    console.log(contactNumber);
+//     console.log(contactNumber);
     if(contactNumber.data === null){
       let contactInfo = contactNumber.data;
-      console.log(contactInfo);
+//       console.log(contactInfo);
       setPhoneNumberResult(contactInfo);
     }else{
       let contactInfo = contactNumber.data.phoneNumber;
-      console.log(contactInfo);
+//       console.log(contactInfo);
   
       setPhoneNumberResult(contactInfo);
     }
@@ -179,7 +179,7 @@ const getContactList = async () => {
 }
 
 const deleteContact = async () => {
-  console.log(deleteName);
+//   console.log(deleteName);
 
   // get contactList
   let newUrl = `${url}delete-contact/${deleteName}`;

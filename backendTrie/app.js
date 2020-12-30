@@ -45,12 +45,12 @@ app.get('/', (req, res) => {
     res.json(finalData)
 })
 
-app.post('/', (req, res) => {
+app.post('/api/', (req, res) => {
 
     res.json(data)
 })
 
-app.get('/add-user/name/:name/contact/:contact', (req, res) => {
+app.get('/api/add-user/name/:name/contact/:contact', (req, res) => {
 
   let name = req.params.name;
   let phoneNumber = req.params.contact;
@@ -65,7 +65,7 @@ app.get('/add-user/name/:name/contact/:contact', (req, res) => {
   res.json(trie)
 })
 
-app.get('/get-contact/:name', (req, res) => {
+app.get('/api/get-contact/:name', (req, res) => {
 
   let name = req.params.name;
   let contactInfo = phoneDirectory.getPhoneNumber(name);
@@ -73,7 +73,7 @@ app.get('/get-contact/:name', (req, res) => {
   res.json(contactInfo)
 })
 
-app.get('/get-list-contact/:keyword', (req, res) => {
+app.get('/api/get-list-contact/:keyword', (req, res) => {
 
   let name = req.params.keyword;
 
@@ -82,7 +82,7 @@ app.get('/get-list-contact/:keyword', (req, res) => {
   res.json(contactList)
 })
 
-app.get('/get-all-contacts/', (req, res) => {
+app.get('/api/get-all-contacts/', (req, res) => {
 
   let contactList = phoneDirectory.contactSuggestion("");
 
@@ -91,7 +91,7 @@ app.get('/get-all-contacts/', (req, res) => {
   res.json(contactList);
 })
 
-app.get('/delete-contact/:delete', (req, res) => {
+app.get('/api/delete-contact/:delete', (req, res) => {
   
   let name = req.params.delete;
   let bool = phoneDirectory.deleteContact(name,  graph.nodesList, graph.edgesList);

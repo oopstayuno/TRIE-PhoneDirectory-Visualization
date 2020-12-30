@@ -21,7 +21,7 @@ function GraphTree() {
 
   const [ prefix, setPrefix ] = useState("");
 
-  const url = "http://localhost:5000/";
+  const url = "http://localhost:5000/api/";
 
   const getAllNode = () => {
     axios.get(url).then( (response) =>  {

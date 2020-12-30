@@ -11,7 +11,7 @@ let phoneDirectory = new PhoneDirectory();
 
 // phoneDirectory.display();
 
-
+const PORT = process.env.PORT || 5000;
 
 let graph = {
   nodesList : [ {id: 0, label: "root", title: "Root Node", color: "#a685e2",level: 0, prefix: "", nodeIDMAx: 0,} ],
@@ -100,7 +100,7 @@ app.get('/delete-contact/:delete', (req, res) => {
 })
 
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${port}`)
 })
 

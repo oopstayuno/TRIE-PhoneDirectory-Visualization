@@ -1,0 +1,25 @@
+{
+  "name": "trie-phone-directory-project",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
+  "description": "This is a visualization project for trie datastructure (Phone Directory)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd backendTrie && node app",
+    "install-server": "cd backendTrie && npm install",
+    "install-client": "cd trie-project && npm install",
+    "build": "cd trie-project && npm run build",
+    "postinstall": "npm run install-server && npm run install-client",
+    "dev": "concurrently \"cd backendTrie && npm run dev\" \"cd trie-project && npm start\" ",
+    "heroku-post-build": "NPM_CONFIG_PRODUCTION=true npm run install-client && npm run install-server && npm run build"
+  },
+  "author": "Kuru",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "postinstall": "^0.7.0"
+  }
+}
